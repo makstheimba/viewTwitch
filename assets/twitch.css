@@ -1,0 +1,159 @@
+html {
+    height: 100%;
+}
+body {
+	text-align: center;    
+	display: flex;
+	flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+header {
+    height: 3rem;
+    background: url(http://i67.tinypic.com/jsdhfk.jpg) no-repeat center;
+    background-size: contain;
+    background-color: #6441a5; 
+    flex: 0 1 auto;
+    border-bottom: 2px solid #5b13a9;
+    cursor: pointer;
+}
+
+/* Search window */
+
+aside {    
+    width: 100%;
+	background: #6c2498;
+    flex: 1 auto;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+aside input {
+    padding: 0.5rem;
+    width: 80%;
+    outline: none;
+    
+}
+#buttSearch {
+    width: 20%;
+    padding: 0.5rem;
+    outline: none;
+}
+.searchResult {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: white;
+}
+.channel {
+    text-align: left;
+    padding: 1rem;
+    padding-right: 3rem;
+    box-shadow: 0 0 2px 2px white inset;
+    position: relative;
+    
+}
+.buttAdd {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+}
+.wait {
+    margin-top: 10px;
+    animation: spin_2526 1.5s linear infinite;
+    transform-origin: 50% 50%;
+    display: none;
+}
+
+@keyframes spin_2526 {
+    0% { transform:rotate(0deg) }
+    100% { transform:rotate(359deg) }
+}
+/* Chosen Streamers */ 
+
+section {
+    padding: 1rem;
+	background: #8663c7;
+    flex: 1 2 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrap {
+    display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.following {
+    width: 9rem;
+    height: 11.2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+    cursor: pointer;    
+    position: relative;    
+    transition: transform 0.25s ease;
+}
+.following:hover {
+    transform: scale( 1.05 );
+}
+.online {
+    background: #d0fcb0;
+    order: 1;
+}
+.offline {
+    background: #ffbaba;
+    order: 2;
+}
+.name {    
+    width: 7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    cursor: default;
+    line-height: 1.2rem;
+}
+.close {
+    position: absolute;
+    width: 1rem;
+    background: #ff9999;
+        
+}
+.avatar {
+    width: 8rem;
+}
+.game {
+    width: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    cursor: default;
+    line-height: 1.2rem;
+}
+/*                  */
+
+@media (min-width: 600px) {
+    header {
+        height: 5rem;    
+    }
+    
+	.wrap {
+		flex-direction: row;
+	}
+    
+	aside {
+		flex: 1 35%;
+	}
+	section {
+		flex: 1 65%;
+	}
+}
