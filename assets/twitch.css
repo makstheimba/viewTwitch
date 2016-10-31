@@ -17,27 +17,39 @@ header {
     border-bottom: 2px solid #5b13a9;
     cursor: pointer;
 }
+.rotated {
+    transform: rotate(180deg);
+}
 
 /* Search window */
 
 aside {    
     width: 100%;
 	background: #6c2498;
-    flex: 1 auto;
+    flex: 1 0 3.5rem;
     display: flex;
     flex-flow: column;
-    overflow: hidden;
+    overflow: hidden;    
+}
+.asideWrap {
+    height: 3.5rem;
 }
 aside input {
     padding: 0.5rem;
+    /*height: 2.2rem;*/
     width: 80%;
     outline: none;
-    
 }
 #buttSearch {
     width: 20%;
     padding: 0.5rem;
     outline: none;
+}
+.buttExpand {
+    position: relative;
+    top: -0.9rem;
+    color: #aaa;
+    z-index: 2;
 }
 .searchResult {
     width: 100%;
@@ -78,7 +90,7 @@ aside input {
 section {
     padding: 1rem;
 	background: #8663c7;
-    flex: 1 2 100%;
+    flex: 1 1 100%;
     overflow-y: auto;
     display: flex;
     flex-flow: row wrap;
@@ -92,8 +104,8 @@ section {
 	flex: 1;
 }
 .following {
-    width: 9rem;
-    height: 11.2rem;
+    width: 6rem;
+    height: 8.2rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
     overflow-x: hidden;
@@ -113,7 +125,8 @@ section {
     order: 2;
 }
 .name {    
-    width: 7rem;
+    width: 5rem;
+    margin-left: -1rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -125,10 +138,9 @@ section {
     position: absolute;
     width: 1rem;
     background: #ff9999;
-        
 }
 .avatar {
-    width: 8rem;
+    width: 5rem;
 }
 .game {
     width: inherit;
@@ -144,16 +156,32 @@ section {
 @media (min-width: 600px) {
     header {
         height: 5rem;    
-    }
-    
+    }    
 	.wrap {
 		flex-direction: row;
 	}
     
 	aside {
-		flex: 1 35%;
+		flex: 1 35% !important; /* Overriding flex-basis set in JS for smaller screens */        
 	}
+    .asideWrap {
+        height: auto;
+    }
 	section {
 		flex: 1 65%;
 	}
+    .buttExpand {
+        display: none;
+    }
+    .following {
+        width: 9rem;
+        height: 11.2rem;
+    }
+    .name {
+        width: 7rem;
+        margin-left: 0;
+    }
+    .avatar {
+        width: 8rem;
+    }
 }
